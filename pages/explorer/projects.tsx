@@ -107,6 +107,7 @@ export async function getStaticProps() {
 
 	const extraRepos = await Promise.all([
 		fetch('https://api.github.com/repos/Northeastern-Electric-Racing/FinishLine').then((r) => r.json()),
+		fetch('https://api.github.com/repos/andrewnjoo/foodframe').then((r) => r.json()),
 	]);
 
 	const combined = [
