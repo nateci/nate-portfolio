@@ -8,7 +8,7 @@ import { ProjectType } from '../../typings';
 function Projects({ data }: { data: ProjectType[] }) {
 	const content = () => {
 		const getDate = (date: string) => {
-			const dateString = new Date(date).toLocaleDateString('en-GB', {
+			const dateString = new Date(date).toLocaleDateString('en-US', {
 				year: 'numeric',
 				month: '2-digit',
 				day: '2-digit',
@@ -107,7 +107,6 @@ export async function getStaticProps() {
 
 	const extraRepos = await Promise.all([
 		fetch('https://api.github.com/repos/Northeastern-Electric-Racing/FinishLine').then((r) => r.json()),
-		fetch('https://api.github.com/repos/andrewnjoo/foodframe').then((r) => r.json()),
 	]);
 
 	const combined = [
