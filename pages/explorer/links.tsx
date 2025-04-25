@@ -175,6 +175,31 @@ function Links() {
 							</div>
 						</a>
 					</Link>
+					<Link
+						href={
+							'https://cnphouston.com'
+						}
+						passHref
+					>
+						<a target="_blank">
+							<div className={styles.listItem}>
+								<div className={styles.listItemName}>
+									<Image
+										src="/svg/momwebsite.svg"
+										alt="icon"
+										width={18}
+										height={18}
+									></Image>
+									<p>Caloriecounter</p>
+								</div>
+								<p className={styles.listItemDateModified}>
+									10/04/2025 04:20
+								</p>
+								<p className={styles.listItemType}>Shortcut</p>
+								<p className={styles.listItemSize}>2kt</p>
+							</div>
+						</a>
+					</Link>
 				</div>
 			</>
 		);
