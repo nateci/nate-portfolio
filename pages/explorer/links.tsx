@@ -190,7 +190,7 @@ function Links() {
 										width={18}
 										height={18}
 									></Image>
-									<p>Caloriecounter</p>
+									<p>CNPHouston</p>
 								</div>
 								<p className={styles.listItemDateModified}>
 									10/04/2025 04:20
