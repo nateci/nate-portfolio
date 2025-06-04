@@ -200,6 +200,31 @@ function Links() {
 							</div>
 						</a>
 					</Link>
+										<Link
+						href={
+							'https://nateci.github.io/PawnsBoardGame/'
+						}
+						passHref
+					>
+						<a target="_blank">
+							<div className={styles.listItem}>
+								<div className={styles.listItemName}>
+									<Image
+										src="/svg/pawn.svg"
+										alt="icon"
+										width={18}
+										height={18}
+									></Image>
+									<p>PawnsBoard</p>
+								</div>
+								<p className={styles.listItemDateModified}>
+									4/06/2025 04:20
+								</p>
+								<p className={styles.listItemType}>Shortcut</p>
+								<p className={styles.listItemSize}>2kt</p>
+							</div>
+						</a>
+					</Link>
 				</div>
 			</>
 		);
