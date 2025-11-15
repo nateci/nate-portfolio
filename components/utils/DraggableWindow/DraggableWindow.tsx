@@ -7,6 +7,7 @@ import {
 	useEffect,
 	useRef,
 	useState,
+	useMemo,
 } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { RiArrowDropDownLine } from 'react-icons/ri';
@@ -80,6 +81,7 @@ function DraggableWindow({
 	const [isResizing, setIsResizing] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const [isClosing, setIsClosing] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
 	const DraggableWindowContext = useContext(Context);
 
@@ -89,6 +91,36 @@ function DraggableWindow({
 	const [windowPriority, setWindowPriority] =
 		DraggableWindowContext.windowPriorityState;
 	const [lastPos, setLastPos] = DraggableWindowContext.lastPosState;
+
+	// Detect mobile/tablet
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth <= 880);
+		};
+
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+
+		return () => window.removeEventListener('resize', checkMobile);
+	}, []);
+
+	const dimensions = useMemo(() => {
+		if (isMobile) {
+			const vw = typeof window !== 'undefined' ? window.innerWidth : 880;
+			return {
+				width: Math.floor(vw * 0.93), // 93vw
+				height: typeof window !== 'undefined' ? window.innerHeight - 110 : 550,
+				minWidth: Math.floor(vw * 0.93),
+				minHeight: 400,
+			};
+		}
+		return {
+			width: 880,
+			height: 550,
+			minWidth: 880,
+			minHeight: 550,
+		};
+	}, [isMobile]);
 
 	const handlePriority = async (e: MouseEvent, window: string) => {
 		const newPriority = await handleWindowPriority({
@@ -120,9 +152,7 @@ function DraggableWindow({
 				}
 			}, 500);
 			const newPriority = Object.fromEntries(
-				Object.entries(windowPriority).filter(
-					([key]) => key !== 'mediaPlayer'
-				)
+				Object.entries(windowPriority).filter(([key]) => key !== 'mediaPlayer')
 			);
 			return setWindowPriority(newPriority);
 		}
@@ -144,16 +174,15 @@ function DraggableWindow({
 
 				let x;
 				let y;
-				if (width !== position[windowName].width) {
-					x = width / 2 - position[windowName].width / 2;
-				} else {
-					x = width / 2 - 880 / 2;
-				}
 
-				if (height !== position[windowName].height - 50) {
-					y = height / 2 - position[windowName].height / 2;
+				// On mobile, always fullscreen (position at 0,0)
+				if (isMobile) {
+					x = 0;
+					y = 0;
 				} else {
-					y = height / 2 - 550 / 2;
+					// Center the window based on current dimensions
+					x = width / 2 - dimensions.width / 2;
+					y = height / 2 - dimensions.height / 2;
 				}
 
 				setPosition({
@@ -161,8 +190,8 @@ function DraggableWindow({
 					[windowName]: {
 						x: x,
 						y: y,
-						width: 880,
-						height: 550,
+						width: dimensions.width,
+						height: dimensions.height,
 					},
 				});
 			};
@@ -178,7 +207,15 @@ function DraggableWindow({
 				setLoading(false);
 			}
 		})();
-	}, [maximized, position, setPosition, windowName]);
+	}, [
+		maximized,
+		position,
+		setPosition,
+		windowName,
+		isMobile,
+		dimensions.width,
+		dimensions.height,
+	]);
 
 	useEffect(() => {
 		if (loading) return;
@@ -217,8 +254,10 @@ function DraggableWindow({
 		<AnimatePresence>
 			{!isClosing && !loading && (
 				<Rnd
-					dragHandleClassName={'draggable'}
+					dragHandleClassName={isMobile ? '' : 'draggable'}
 					cancel={'.not_draggable'}
+					disableDragging={isMobile}
+					enableResizing={!isMobile}
 					onDragStart={() => {
 						if (maximized[windowName]) {
 							setMaximized({ ...maximized, [windowName]: false });
@@ -259,22 +298,20 @@ function DraggableWindow({
 						height: position[windowName].height || 550,
 					}}
 					position={{
-						x: position[windowName].x,
-						y: position[windowName].y,
+						x: isMobile ? 0 : position[windowName].x,
+						y: isMobile ? 0 : position[windowName].y,
 					}}
 					minWidth={880}
 					minHeight={550}
 					className={`${
-						isDragging || isResizing || loading
-							? ''
-							: styles.animatedWindow
+						isDragging || isResizing || loading ? '' : styles.animatedWindow
 					}`}
 					style={
 						isDragging || isResizing || loading
 							? { zIndex: 997 }
 							: {
 									zIndex: windowPriority[windowName] || 10,
-							  }
+								}
 					}
 					resizeHandleStyles={handleStyles}
 				>
@@ -283,9 +320,7 @@ function DraggableWindow({
 						className={styles.container}
 						ref={nodeRef}
 						variants={variants}
-						animate={
-							maximized[windowName] ? 'maximized' : 'minimized'
-						}
+						animate={maximized[windowName] ? 'maximized' : 'minimized'}
 						initial={
 							history.length > 1 && windowName === 'fileExplorer'
 								? { scale: 1 }
@@ -304,11 +339,7 @@ function DraggableWindow({
 								<section className={`${styles.top} draggable`}>
 									{windowName === 'terminal' ? (
 										<>
-											<div
-												className={
-													styles.terminalContainer
-												}
-											>
+											<div className={styles.terminalContainer}>
 												<div>
 													<div>
 														{topIcon}
@@ -316,11 +347,7 @@ function DraggableWindow({
 													</div>
 													<VscChromeClose />
 												</div>
-												<div
-													className={
-														styles.manageButtons
-													}
-												>
+												<div className={styles.manageButtons}>
 													<AiOutlinePlus />
 													<RiArrowDropDownLine />
 												</div>
@@ -328,30 +355,20 @@ function DraggableWindow({
 										</>
 									) : (
 										<>
-											<div
-												className={styles.topContainer}
-											>
+											<div className={styles.topContainer}>
 												{topIcon}
 												<p>{topTitle}</p>
 											</div>
 										</>
 									)}
-									<div
-										className={`${styles.iconContainer} not_draggable`}
-									>
+									<div className={`${styles.iconContainer} not_draggable`}>
 										<div className={styles.icon}>
 											<VscChromeMinimize />
 										</div>
-										<div
-											className={styles.icon}
-											onClick={handleMaximize}
-										>
+										<div className={styles.icon} onClick={handleMaximize}>
 											<VscChromeMaximize />
 										</div>
-										<div
-											className={styles.iconClose}
-											onClick={handleClose}
-										>
+										<div className={styles.iconClose} onClick={handleClose}>
 											<VscChromeClose />
 										</div>
 									</div>

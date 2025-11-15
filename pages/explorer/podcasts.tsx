@@ -9,7 +9,7 @@ function Podcasts() {
 				<title>nateci - Podcasts</title>
 				<link
 					rel="canonical"
-					href="https://www.natecirino.com/explorer/downloads"
+					href="https://www.natecirino.com/explorer/podcasts"
 				/>
 
 				{/* Description */}
@@ -22,7 +22,7 @@ function Podcasts() {
 				<meta property="og:title" content="nateci - Podcasts" />
 				<meta
 					property="og:url"
-					content="https://www.natecirino.com/explorer/downloads"
+					content="https://www.natecirino.com/explorer/podcasts"
 				/>
 				<meta
 					property="og:description"
@@ -30,11 +30,7 @@ function Podcasts() {
 				/>
 			</Head>
 			<div style={{ height: '100%' }}>
-				<FileExplorer
-					folder="Podcasts"
-					topNav={true}
-					icon="podcasts"
-				/>
+				<FileExplorer folder="Podcasts" topNav={true} icon="podcasts" />
 				<Icons />
 			</div>
 		</>

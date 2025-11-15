@@ -22,10 +22,7 @@ function About() {
 		<>
 			<Head>
 				<title>nateci - About me</title>
-				<link
-					rel="canonical"
-					href="https://www.natecirino.com/notepad/about"
-				/>
+				<link rel="canonical" href="https://www.natecirino.com/notepad/about" />
 
 				{/* Description */}
 				<meta

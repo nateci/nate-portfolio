@@ -23,19 +23,13 @@ export default function Document() {
 				<meta name="designer" content="nateci" />
 				<meta name="publisher" content="nateci" />
 
-				<meta
-					name="keywords"
-					content="nateci, Nate, coding, development"
-				/>
+				<meta name="keywords" content="nateci, Nate, coding, development" />
 
 				<meta name="robots" content="index, follow" />
 				<meta name="subject" content="Personal" />
 
 				{/* Global OpenGraph tags */}
-				<meta
-					property="og:site_name"
-					content="Average Windows enjoyer"
-				/>
+				<meta property="og:site_name" content="Average Windows enjoyer" />
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://www.natecirino.com" />
 				<meta

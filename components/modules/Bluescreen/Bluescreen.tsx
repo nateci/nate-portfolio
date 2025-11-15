@@ -2,10 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './Bluescreen.module.css';
-
-type Props = {
-	errorCode: string;
-};
+import { Props } from 'react-rnd';
 
 function Bluescreen({ errorCode }: Props) {
 	const [progress, setProgress] = useState(0);
@@ -15,9 +12,7 @@ function Bluescreen({ errorCode }: Props) {
 		let interval = setTimeout(() => {
 			if (progress <= 100) {
 				let currentProgress = progress;
-				let newProgress = (currentProgress += Math.floor(
-					Math.random() * 10
-				));
+				let newProgress = (currentProgress += Math.floor(Math.random() * 10));
 				if (newProgress > 100) newProgress = 100;
 				if (isMounted) setProgress(newProgress);
 			} else {
@@ -40,9 +35,8 @@ function Bluescreen({ errorCode }: Props) {
 					<div>
 						<h1>:(</h1>
 						<h2>
-							Your PC ran into a problem and needs to restart.
-							We&apos;re just collecting some error info, and then
-							we&apos;ll restart for you.
+							Your PC ran into a problem and needs to restart. We&apos;re just
+							collecting some error info, and then we&apos;ll restart for you.
 						</h2>
 					</div>
 					<h2>{progress}% complete</h2>
@@ -57,12 +51,12 @@ function Bluescreen({ errorCode }: Props) {
 						</div>
 						<div>
 							<h2>
-								For more information about this issue and
-								possible fixes, visit https://natecirino.com/error
+								For more information about this issue and possible fixes, visit
+								https://natecirino.com/error
 							</h2>
 							<h2>
-								If you call a support person, give them this
-								info: Stop Code: {errorCode || 'UNKNOWN'}
+								If you call a support person, give them this info: Stop Code:{' '}
+								{errorCode || 'UNKNOWN'}
 							</h2>
 						</div>
 					</div>

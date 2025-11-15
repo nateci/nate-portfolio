@@ -1,7 +1,16 @@
+/*
+    ============================================
+    DESKTOP GRID - DESKTOP STYLES
+    ============================================
+*/
+
+/* Main Container */
 .container {
+	overflow-y: auto;
 	height: 100%;
 }
 
+/* Grid Wrapper */
 .wrapper {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
@@ -10,6 +19,7 @@
 	padding: 5px;
 }
 
+/* Grid Item */
 .item {
 	display: flex;
 	flex-direction: column;
@@ -31,10 +41,54 @@
 	background-color: #2e2e2e;
 }
 
+/* Item States */
 .deleted {
 	visibility: hidden;
 }
 
 .selected {
 	background-color: #2e2e2e;
+}
+
+/*
+    ============================================
+    DESKTOP GRID - MOBILE STYLES
+    ============================================
+*/
+
+@media (max-width: 880px) {
+	/* Grid Wrapper */
+	.wrapper {
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 8px;
+		padding: 10px;
+	}
+
+	/* Grid Item */
+	.item {
+		width: 100%;
+		padding: 8px 5px;
+	}
+
+	.item p {
+		font-size: 0.65rem;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Grid Wrapper */
+	.wrapper {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 5px;
+		padding: 8px;
+	}
+
+	/* Grid Item */
+	.item {
+		padding: 6px 3px;
+	}
+
+	.item p {
+		font-size: 0.6rem;
+	}
 }

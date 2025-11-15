@@ -6,12 +6,18 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
+		"dev": "npm run generate-index && next dev",
+		"build": "npm run generate-index && next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"lint:fix": "next lint --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"generate-index": "tsx components/utils/scripts/generateFileIndex.tsx",
+		"postinstall": "npm run generate-index"
 	},
 	"dependencies": {
+		"@anthropic-ai/sdk": "^0.68.0",
 		"framer-motion": "^6.2.6",
 		"next": "^12.1.0",
 		"react": "17.0.2",
@@ -24,11 +30,13 @@
 	"devDependencies": {
 		"@types/node": "^17.0.9",
 		"@types/react": "^17.0.38",
-		"eslint": "8.5.0",
-		"eslint-config-next": "12.0.7",
+		"eslint": "^8.5.0",
+		"eslint-config-next": "^12.0.7",
+		"prettier": "^3.6.2",
 		"stylelint": "^15.10.1",
 		"stylelint-config-standard": "^24.0.0",
 		"stylelint-order": "^5.0.0",
+		"tsx": "^4.7.0",
 		"typescript": "^4.5.5"
 	}
 }

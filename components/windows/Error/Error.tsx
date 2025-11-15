@@ -31,7 +31,7 @@ function Error({ errors, index, setError, error }: Props) {
 					? {
 							x: `calc(-50% +  ${index * 20}px)`,
 							y: `calc(-50% -  ${index * 20}px)`,
-					  }
+						}
 					: { x: '-50%', y: '-50%' }
 			}
 		>
@@ -61,9 +61,8 @@ function Error({ errors, index, setError, error }: Props) {
 					</div>
 					<div>
 						<p>
-							The instruction at 0x0000000088000000 referenced
-							memory at 0x0000000088000000. The memory could not
-							be written.
+							The instruction at 0x0000000088000000 referenced memory at
+							0x0000000088000000. The memory could not be written.
 							<br />
 							<br />
 							Click on OK to terminate the program

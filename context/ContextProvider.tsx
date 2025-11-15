@@ -30,10 +30,7 @@ type ContextType = {
 	indexState: [number, (newIndex: number) => void];
 	wasManualState: [boolean, (newWasManual: boolean) => void];
 	positionState: [PositionState, (newPosition: PositionState) => void];
-	windowPriorityState: [
-		WindowPriority,
-		(newPriority: WindowPriority) => void
-	];
+	windowPriorityState: [WindowPriority, (newPriority: WindowPriority) => void];
 	lastPosState: [LastPos, (newLastPos: LastPos) => void];
 };
 
@@ -47,6 +44,7 @@ const initialMaximized = {
 	mediaPlayer: null,
 	notepad: null,
 	terminal: null,
+	resume: null,
 };
 
 const initialPosition = {
@@ -69,6 +67,12 @@ const initialPosition = {
 		height: 550,
 	},
 	terminal: {
+		x: 0,
+		y: 0,
+		width: 880,
+		height: 550,
+	},
+	resume: {
 		x: 0,
 		y: 0,
 		width: 880,

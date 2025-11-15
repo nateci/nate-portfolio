@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Icons from '../../components/modules/Icons/Icons';
-import FileExplorer from '../../components/windows/FileExplorer/FileExplorer';
-import styles from '../../styles/utils/List.module.css';
+import Icons from '../../../components/modules/Icons/Icons';
+import FileExplorer from '../../../components/windows/FileExplorer/FileExplorer';
+import styles from '../../../styles/utils/List.module.css';
 
 function Tools() {
 	const content = () => {
@@ -19,9 +19,7 @@ function Tools() {
 							></Image>
 							<p>Visual Studio Code - Insiders</p>
 						</div>
-						<p className={styles.listItemDateModified}>
-							04/12/2025 03:32
-						</p>
+						<p className={styles.listItemDateModified}>04/12/2025 03:32</p>
 						<p className={styles.listItemType}>Shortcut</p>
 						<p className={styles.listItemSize}>2kt</p>
 					</div>
@@ -35,9 +33,7 @@ function Tools() {
 							></Image>
 							<p>Github Desktop</p>
 						</div>
-						<p className={styles.listItemDateModified}>
-							04/12/2025 05:10
-						</p>
+						<p className={styles.listItemDateModified}>04/12/2025 05:10</p>
 						<p className={styles.listItemType}>Shortcut</p>
 						<p className={styles.listItemSize}>2kt</p>
 					</div>
@@ -51,9 +47,7 @@ function Tools() {
 							></Image>
 							<p>MongoDBCompass</p>
 						</div>
-						<p className={styles.listItemDateModified}>
-							04/12/2025 05:01
-						</p>
+						<p className={styles.listItemDateModified}>04/12/2025 05:01</p>
 						<p className={styles.listItemType}>Shortcut</p>
 						<p className={styles.listItemSize}>2kt</p>
 					</div>
@@ -67,9 +61,7 @@ function Tools() {
 							></Image>
 							<p>Postman</p>
 						</div>
-						<p className={styles.listItemDateModified}>
-							04/12/2025 01:35
-						</p>
+						<p className={styles.listItemDateModified}>04/12/2025 01:35</p>
 						<p className={styles.listItemType}>Shortcut</p>
 						<p className={styles.listItemSize}>2kt</p>
 					</div>
@@ -83,9 +75,7 @@ function Tools() {
 							></Image>
 							<p>Photoshop</p>
 						</div>
-						<p className={styles.listItemDateModified}>
-							04/12/2025 02:11
-						</p>
+						<p className={styles.listItemDateModified}>04/12/2025 02:11</p>
 						<p className={styles.listItemType}>Shortcut</p>
 						<p className={styles.listItemSize}>2kt</p>
 					</div>
@@ -99,9 +89,7 @@ function Tools() {
 							></Image>
 							<p>Illustrator</p>
 						</div>
-						<p className={styles.listItemDateModified}>
-							04/12/2025 05:59
-						</p>
+						<p className={styles.listItemDateModified}>04/12/2025 05:59</p>
 						<p className={styles.listItemType}>Shortcut</p>
 						<p className={styles.listItemSize}>2kt</p>
 					</div>
@@ -149,3 +137,4 @@ function Tools() {
 }
 
 export default Tools;
+

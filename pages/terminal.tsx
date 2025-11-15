@@ -17,10 +17,7 @@ function Terminal() {
 
 				{/* OpenGraph */}
 				<meta property="og:title" content="nateci - Terminal" />
-				<meta
-					property="og:url"
-					content="https://www.natecirino.com/terminal"
-				/>
+				<meta property="og:url" content="https://www.natecirino.com/terminal" />
 				<meta
 					property="og:description"
 					content="A place to execute commands and feel like being a hacker."

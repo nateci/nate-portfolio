@@ -23,7 +23,6 @@ const useMediaQuery = (width: number) => {
 		const media = window.matchMedia(`(max-width: ${width}px)`);
 		media.addEventListener('change', updateTarget);
 
-		// Check on mount (callback is not called until a change occurs)
 		if (media.matches) {
 			if (isMounted) setTargetReached(true);
 		}
@@ -53,13 +52,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 	// Google analytics
 	useEffect(() => {
 		const handleRouteChange = (url: string) => {
-			(window as any).gtag(
-				'config',
-				process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
-				{
-					page_path: url,
-				}
-			);
+			(window as any).gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
+				page_path: url,
+			});
 		};
 		router.events.on('routeChangeComplete', handleRouteChange);
 		return () => {
@@ -69,17 +64,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	return (
 		<ContextProvider>
-			{isBreakpoint ? (
-				<>
-					<Bluescreen errorCode="SCREEN_WIDTH_NOT_SUPPORTED" />
-				</>
-			) : (
-				<>
-					<Layout>
-						<Component {...pageProps} />
-					</Layout>
-				</>
-			)}
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 		</ContextProvider>
 	);
 }

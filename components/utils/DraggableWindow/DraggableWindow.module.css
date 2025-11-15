@@ -1,3 +1,10 @@
+/*
+    ============================================
+    TERMINAL/WINDOW CONTAINER - DESKTOP STYLES
+    ============================================
+*/
+
+/* Main Container */
 .container {
 	z-index: 100;
 	display: flex;
@@ -14,6 +21,7 @@
 	transition: all 0.2s ease-in-out;
 }
 
+/* Main Section */
 .main {
 	width: 100%;
 	height: 100%;
@@ -24,11 +32,26 @@
 	background-color: #202020;
 }
 
+/* Top Bar */
 .top {
 	display: flex;
 	justify-content: space-between;
 	height: 2rem;
 	padding-left: 5px;
+}
+
+.topContainer {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+/* Icons */
+.iconContainer {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	color: #fff;
 }
 
 .top .icon {
@@ -58,19 +81,7 @@
 	background-color: red;
 }
 
-.topContainer {
-	display: flex;
-	gap: 5px;
-	align-items: center;
-}
-
-.iconContainer {
-	display: flex;
-	gap: 5px;
-	align-items: center;
-	color: #fff;
-}
-
+/* Terminal Container */
 .terminalContainer {
 	display: flex;
 	gap: 10px;
@@ -96,6 +107,7 @@
 	background-color: rgb(19 19 19);
 }
 
+/* Manage Buttons */
 .manageButtons {
 	display: flex;
 	gap: 5px;
@@ -103,4 +115,97 @@
 	height: 100%;
 	border-radius: 0 0 0 10px;
 	font-size: 1.2rem;
+}
+
+/*
+    ============================================
+    TERMINAL/WINDOW CONTAINER - MOBILE STYLES
+    ============================================
+*/
+
+@media (max-width: 880px) {
+	/* Main Container */
+	.container {
+		width: 100vw !important;
+		max-width: 93vw;
+		height: 90vh !important;
+		border: none;
+		border-radius: 0;
+	}
+
+	/* Top Bar */
+	.top {
+		height: 2.5rem;
+		padding-left: 3px;
+	}
+
+	.topContainer {
+		gap: 3px;
+	}
+
+	/* Icons */
+	.iconContainer {
+		gap: 3px;
+		font-size: 0.9rem;
+	}
+
+	.top .icon {
+		padding: 0 8px;
+		font-size: 0.9rem;
+	}
+
+	.top .iconClose {
+		padding-right: 12px;
+		padding-left: 12px;
+		border-radius: 0;
+	}
+
+	/* Terminal Container */
+	.terminalContainer {
+		gap: 6px;
+		font-size: 0.9rem;
+	}
+
+	.terminalContainer div:first-child {
+		gap: 3px;
+		padding-right: 8px;
+		padding-left: 8px;
+	}
+
+	/* Manage Buttons */
+	.manageButtons {
+		gap: 3px;
+		border-radius: 0;
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Main Container */
+	.container {
+		height: 85vh !important;
+		max-height: 85vh;
+	}
+
+	/* Icons */
+	.top .icon {
+		padding: 0 6px;
+		font-size: 0.85rem;
+	}
+
+	/* Terminal Container */
+	.terminalContainer {
+		gap: 4px;
+		font-size: 0.85rem;
+	}
+
+	.terminalContainer div:first-child {
+		padding-right: 6px;
+		padding-left: 6px;
+	}
+
+	/* Manage Buttons */
+	.manageButtons {
+		font-size: 0.9rem;
+	}
 }
