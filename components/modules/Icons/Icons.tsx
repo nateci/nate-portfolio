@@ -65,6 +65,17 @@ function Icons() {
 							<p>About me</p>
 						</div>
 					</Link>
+					<Link href={'/resume/resume'} passHref>
+						<div className={`${styles.item} selectoItem`}>
+							<Image
+								src="/icons/pdf/pdf.png"
+								alt="icon"
+								width={40}
+								height={40}
+							></Image>
+							<p>Resume</p>
+						</div>
+					</Link>
 					<Link href={'/explorer/projects'} passHref>
 						<div className={`${styles.item} selectoItem`}>
 							<Image

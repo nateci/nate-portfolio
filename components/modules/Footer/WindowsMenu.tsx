@@ -71,10 +71,7 @@ function WindowsMenu({ winMenu, handleWinMenu }: Props) {
 					<div className={styles.winMenuSearch}>
 						<div className={styles.inputWithIcon}>
 							<VscSearch />
-							<input
-								type="text"
-								placeholder="Type here to search"
-							/>
+							<input type="text" placeholder="Type here to search" />
 						</div>
 					</div>
 					<div className={styles.winMenuPinned}>
@@ -132,10 +129,7 @@ function WindowsMenu({ winMenu, handleWinMenu }: Props) {
 							</div>
 							<div className={styles.winMenuRecommendedBottom}>
 								<div className={styles.winMenuRecommendedItem}>
-									<Link
-										href="/explorer/quick-access"
-										passHref
-									>
+									<Link href="/explorer/quick-access" passHref>
 										<div onClick={() => handleWinMenu()}>
 											<Image
 												src="/icons/explorer/explorer.png"

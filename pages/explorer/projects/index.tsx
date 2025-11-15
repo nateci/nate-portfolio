@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Icons from '../../components/modules/Icons/Icons';
-import FileExplorer from '../../components/windows/FileExplorer/FileExplorer';
-import styles from '../../styles/utils/List.module.css';
-import { ProjectType } from '../../typings';
+import Icons from '../../../components/modules/Icons/Icons';
+import FileExplorer from '../../../components/windows/FileExplorer/FileExplorer';
+import styles from '../../../styles/utils/List.module.css';
+import { ProjectType } from '../../../typings';
 
 function Projects({ data }: { data: ProjectType[] }) {
 	const content = () => {
@@ -33,11 +33,7 @@ function Projects({ data }: { data: ProjectType[] }) {
 							className={styles.listItem}
 							key={project.id}
 							onClick={() =>
-								window.open(
-									project.html_url,
-									'_blank',
-									'noopener,noreferrer'
-								)
+								window.open(project.html_url, '_blank', 'noopener,noreferrer')
 							}
 						>
 							<div className={styles.listItemName}>
@@ -53,9 +49,7 @@ function Projects({ data }: { data: ProjectType[] }) {
 								{getDate(project.updated_at)}
 							</p>
 							<p className={styles.listItemType}>Shortcut</p>
-							<p className={styles.listItemSize}>
-								{formatSize(project.size)}
-							</p>
+							<p className={styles.listItemSize}>{formatSize(project.size)}</p>
 						</div>
 					))}
 				</div>
@@ -72,21 +66,15 @@ function Projects({ data }: { data: ProjectType[] }) {
 				/>
 
 				{/* Description */}
-				<meta
-					name="description"
-					content="heres da projects!"
-				/>
+				<meta name="description" content="heres da projects!" />
 
 				{/* OpenGraph */}
-				<meta property="og:title" content="nateci - Quick access" />
+				<meta property="og:title" content="nateci - Projects" />
 				<meta
 					property="og:url"
 					content="https://www.natecirino.com/explorer/projects"
 				/>
-				<meta
-					property="og:description"
-					content="heres da projects!"
-				/>
+				<meta property="og:description" content="heres da projects!" />
 			</Head>
 			<div style={{ height: '100%' }}>
 				<FileExplorer
@@ -106,14 +94,17 @@ export async function getStaticProps() {
 	const userRepos = await userReposRes.json();
 
 	const extraRepos = await Promise.all([
-		fetch('https://api.github.com/repos/Northeastern-Electric-Racing/FinishLine').then((r) => r.json()),
-		fetch('https://api.github.com/repos/andrewnjoo/foodframe').then((r) => r.json()),
+		fetch(
+			'https://api.github.com/repos/Northeastern-Electric-Racing/FinishLine'
+		).then((r) => r.json()),
+		fetch('https://api.github.com/repos/andrewnjoo/foodframe').then((r) =>
+			r.json()
+		),
 	]);
 
 	const combined = [
 		...userRepos.filter(
-			(repo: ProjectType) =>
-				!repo.fork && repo.full_name !== 'nateci/nateci'
+			(repo: ProjectType) => !repo.fork && repo.full_name !== 'nateci/nateci'
 		),
 		...extraRepos,
 	];
@@ -125,3 +116,4 @@ export async function getStaticProps() {
 }
 
 export default Projects;
+

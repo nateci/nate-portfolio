@@ -1,3 +1,13 @@
 {
-	"extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "ignorePatterns": [
+    "next.config.js",
+    "node_modules/",
+    ".next/",
+    "out/",
+	"scripts.js",
+	"generateFileIndex.js"
+  ]
 }
+
+

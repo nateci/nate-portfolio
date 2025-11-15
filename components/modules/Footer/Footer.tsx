@@ -35,9 +35,7 @@ function Footer() {
 						})
 					);
 				if (isMounted)
-					setDateStr(
-						new Date().toLocaleDateString(navigator.language)
-					);
+					setDateStr(new Date().toLocaleDateString(navigator.language));
 			}
 		}, 1000);
 		return () => {
@@ -83,10 +81,7 @@ function Footer() {
 							/>
 						</div>
 					</Link>
-					<div
-						className={styles.icon}
-						onClick={() => handleError('Firefox')}
-					>
+					<div className={styles.icon} onClick={() => handleError('Firefox')}>
 						<Image
 							src={'/icons/firefox/firefox.png'}
 							width={25}
@@ -94,10 +89,7 @@ function Footer() {
 							alt="logo"
 						/>
 					</div>
-					<div
-						className={styles.icon}
-						onClick={() => handleError('Spotify')}
-					>
+					<div className={styles.icon} onClick={() => handleError('Spotify')}>
 						<Image
 							src={'/icons/spotify/spotify.png'}
 							width={25}
@@ -105,10 +97,7 @@ function Footer() {
 							alt="logo"
 						/>
 					</div>
-					<div
-						className={styles.icon}
-						onClick={() => handleError('Steam')}
-					>
+					<div className={styles.icon} onClick={() => handleError('Steam')}>
 						<Image
 							src={'/icons/steam/steam.png'}
 							width={25}
@@ -116,10 +105,7 @@ function Footer() {
 							alt="logo"
 						/>
 					</div>
-					<div
-						className={styles.icon}
-						onClick={() => handleError('Discord')}
-					>
+					<div className={styles.icon} onClick={() => handleError('Discord')}>
 						<Image
 							src={'/icons/discord/discord.png'}
 							width={25}
@@ -129,9 +115,7 @@ function Footer() {
 					</div>
 					<div
 						className={styles.icon}
-						onClick={() =>
-							handleError('Visual Studio Code - Insiders')
-						}
+						onClick={() => handleError('Visual Studio Code - Insiders')}
 					>
 						<Image
 							src={'/icons/vscode/vscode.png'}

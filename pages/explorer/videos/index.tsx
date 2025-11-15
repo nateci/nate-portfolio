@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useContext, useState } from 'react';
-import Icons from '../../components/modules/Icons/Icons';
-import { handleWindowPriority } from '../../components/utils/WindowPriority/WindowPriority';
-import FileExplorer from '../../components/windows/FileExplorer/FileExplorer';
-import MediaPlayer from '../../components/windows/MediaPlayer/MediaPlayer';
-import { Context } from '../../context/ContextProvider';
-import styles from '../../styles/utils/MediaGrid.module.css';
-import { MediaType } from '../../typings';
+import Icons from '../../../components/modules/Icons/Icons';
+import { handleWindowPriority } from '../../../components/utils/WindowPriority/WindowPriority';
+import FileExplorer from '../../../components/windows/FileExplorer/FileExplorer';
+import MediaPlayer from '../../../components/windows/MediaPlayer/MediaPlayer';
+import { Context } from '../../../context/ContextProvider';
+import styles from '../../../styles/utils/MediaGrid.module.css';
+import { MediaType } from '../../../typings';
 
 function Videos({ data }: { data: MediaType[] }) {
 	const [openVideo, setOpenVideo] = useState<MediaType | null>(null);
@@ -58,10 +58,7 @@ function Videos({ data }: { data: MediaType[] }) {
 		<>
 			<Head>
 				<title>nateci - Videos</title>
-				<link
-					rel="canonical"
-					href="https://www.nateci.com/explorer/videos"
-				/>
+				<link rel="canonical" href="https://www.natecirino.com/explorer/videos" />
 
 				{/* Description */}
 				<meta
@@ -73,7 +70,7 @@ function Videos({ data }: { data: MediaType[] }) {
 				<meta property="og:title" content="nateci - Videos" />
 				<meta
 					property="og:url"
-					content="https://www.nateci.com/explorer/videos"
+					content="https://www.natecirino.com/explorer/videos"
 				/>
 				<meta
 					property="og:description"
@@ -150,3 +147,4 @@ export async function getStaticProps() {
 }
 
 export default Videos;
+

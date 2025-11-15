@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Icons from '../../components/modules/Icons/Icons';
-import FileExplorer from '../../components/windows/FileExplorer/FileExplorer';
-import styles from '../../styles/utils/List.module.css';
+import Icons from '../../../components/modules/Icons/Icons';
+import FileExplorer from '../../../components/windows/FileExplorer/FileExplorer';
+import styles from '../../../styles/utils/List.module.css';
 
 function Links() {
 	const content = () => {
@@ -22,9 +22,7 @@ function Links() {
 									></Image>
 									<p>Linkedin</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									04/08/2025 02:02
-								</p>
+								<p className={styles.listItemDateModified}>04/08/2025 02:02</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
@@ -42,20 +40,13 @@ function Links() {
 									></Image>
 									<p>Github</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									04/08/2025 08:00
-								</p>
+								<p className={styles.listItemDateModified}>04/08/2025 08:00</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
 						</a>
 					</Link>
-					<Link
-						href={
-							'https://open.spotify.com/user/neatix'
-						}
-						passHref
-					>
+					<Link href={'https://open.spotify.com/user/neatix'} passHref>
 						<a target="_blank">
 							<div className={styles.listItem}>
 								<div className={styles.listItemName}>
@@ -67,20 +58,13 @@ function Links() {
 									></Image>
 									<p>Spotify</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									10/04/2025 04:20
-								</p>
+								<p className={styles.listItemDateModified}>10/04/2025 04:20</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
 						</a>
 					</Link>
-					<Link
-						href={
-							'https://brokenplanet.com'
-						}
-						passHref
-					>
+					<Link href={'https://brokenplanet.com'} passHref>
 						<a target="_blank">
 							<div className={styles.listItem}>
 								<div className={styles.listItemName}>
@@ -92,20 +76,13 @@ function Links() {
 									></Image>
 									<p>Brokenplanet</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									10/04/2025 04:20
-								</p>
+								<p className={styles.listItemDateModified}>10/04/2025 04:20</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
 						</a>
 					</Link>
-					<Link
-						href={
-							'https://dailypaperclothing.com'
-						}
-						passHref
-					>
+					<Link href={'https://dailypaperclothing.com'} passHref>
 						<a target="_blank">
 							<div className={styles.listItem}>
 								<div className={styles.listItemName}>
@@ -117,20 +94,13 @@ function Links() {
 									></Image>
 									<p>Dailypaper</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									10/04/2025 04:20
-								</p>
+								<p className={styles.listItemDateModified}>10/04/2025 04:20</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
 						</a>
 					</Link>
-					<Link
-						href={
-							'https://plum-julienne-9.tiiny.site'
-						}
-						passHref
-					>
+					<Link href={'https://plum-julienne-9.tiiny.site'} passHref>
 						<a target="_blank">
 							<div className={styles.listItem}>
 								<div className={styles.listItemName}>
@@ -142,20 +112,13 @@ function Links() {
 									></Image>
 									<p>Resume</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									10/04/2025 04:20
-								</p>
+								<p className={styles.listItemDateModified}>10/04/2025 04:20</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
 						</a>
 					</Link>
-					<Link
-						href={
-							'https://nateci.github.io/caloriecounter/'
-						}
-						passHref
-					>
+					<Link href={'https://nateci.github.io/caloriecounter/'} passHref>
 						<a target="_blank">
 							<div className={styles.listItem}>
 								<div className={styles.listItemName}>
@@ -167,20 +130,13 @@ function Links() {
 									></Image>
 									<p>Caloriecounter</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									10/04/2025 04:20
-								</p>
+								<p className={styles.listItemDateModified}>10/04/2025 04:20</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
 						</a>
 					</Link>
-					<Link
-						href={
-							'https://cnphouston.com'
-						}
-						passHref
-					>
+					<Link href={'https://cnphouston.com'} passHref>
 						<a target="_blank">
 							<div className={styles.listItem}>
 								<div className={styles.listItemName}>
@@ -192,20 +148,13 @@ function Links() {
 									></Image>
 									<p>CNPHouston</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									10/04/2025 04:20
-								</p>
+								<p className={styles.listItemDateModified}>10/04/2025 04:20</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
 						</a>
 					</Link>
-										<Link
-						href={
-							'https://nateci.github.io/PawnsBoardGame/'
-						}
-						passHref
-					>
+					<Link href={'https://nateci.github.io/PawnsBoardGame/'} passHref>
 						<a target="_blank">
 							<div className={styles.listItem}>
 								<div className={styles.listItemName}>
@@ -217,9 +166,7 @@ function Links() {
 									></Image>
 									<p>PawnsBoard</p>
 								</div>
-								<p className={styles.listItemDateModified}>
-									4/06/2025 04:20
-								</p>
+								<p className={styles.listItemDateModified}>4/06/2025 04:20</p>
 								<p className={styles.listItemType}>Shortcut</p>
 								<p className={styles.listItemSize}>2kt</p>
 							</div>
@@ -269,3 +216,4 @@ function Links() {
 }
 
 export default Links;
+

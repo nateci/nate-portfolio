@@ -1,3 +1,10 @@
+/*
+    ============================================
+    TERMINAL - FONTS & DESKTOP STYLES
+    ============================================
+*/
+
+/* Font Face */
 @font-face {
 	font-weight: 600;
 	font-style: normal;
@@ -6,6 +13,14 @@
 	font-display: swap;
 }
 
+/* Terminal Wrapper */
+.terminalWrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* Main Container */
 .main {
 	position: absolute;
 	z-index: 1;
@@ -21,6 +36,15 @@
 	font-size: 0.9rem;
 }
 
+/* Background */
+.background {
+	height: calc(100% - 32px);
+	border-radius: 0 0 10px 10px;
+	background-image: url('/images/darknoice.png');
+	opacity: 0.9;
+}
+
+/* Terminal Title */
 .terminalTitle {
 	color: rgb(64 200 64);
 }
@@ -33,12 +57,19 @@
 	color: rgb(200 64 255);
 }
 
+/* Prompt */
 .promt {
 	display: flex;
 	gap: 5px;
-	align-items: flex-start;
-	height: 100%;
+	align-items: center;
+	height: auto;
 	color: #fff;
+}
+
+.promt p {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
 }
 
 .promt input {
@@ -52,14 +83,127 @@
 	word-wrap: break-word;
 }
 
+/* History Item */
 .historyItem {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-.background {
-	height: calc(100% - 32px);
-	border-radius: 0 0 10px 10px;
-	background-image: url('/images/darknoice.png');
-	opacity: 0.9;
+.historyItem p {
+	margin: 4px 0;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/* AI Response */
+.aiResponse {
+	margin: 8px 0;
+	padding: 8px 12px;
+	border-left: 3px solid #0f0;
+	background: rgb(0 255 0 / 5%);
+	color: #0f0;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.thinking {
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+}
+
+/*
+    ============================================
+    TERMINAL - MOBILE STYLES
+    ============================================
+*/
+
+@media (max-width: 880px) {
+	/* Terminal Wrapper */
+	.terminalWrapper {
+		height: calc(100% - 2.5rem);
+	}
+
+	/* Main Container */
+	.main {
+		height: calc(100% - 2.5rem);
+		padding: 8px;
+	}
+
+	.main p {
+		font-size: 0.8rem;
+		word-wrap: break-word;
+	}
+
+	/* Background */
+	.background {
+		height: calc(100% - 2.5rem);
+		border-radius: 0;
+	}
+
+	/* Prompt */
+	.promt {
+		gap: 3px;
+	}
+
+	.promt input {
+		font-size: 0.8rem;
+	}
+
+	/* History Item */
+	.historyItem {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+
+	.historyItem p {
+		margin: 3px 0;
+	}
+
+	/* AI Response */
+	.aiResponse {
+		margin: 6px 0;
+		padding: 6px 10px;
+		border-left-width: 2px;
+		font-size: 0.8rem;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Main Container */
+	.main {
+		padding: 6px;
+	}
+
+	.main p {
+		font-size: 0.75rem;
+	}
+
+	/* Prompt */
+	.promt input {
+		font-size: 0.75rem;
+	}
+
+	/* History Item */
+	.historyItem {
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	/* AI Response */
+	.aiResponse {
+		margin: 4px 0;
+		padding: 5px 8px;
+		font-size: 0.75rem;
+	}
 }

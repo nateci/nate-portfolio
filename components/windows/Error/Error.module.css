@@ -1,3 +1,10 @@
+/*
+    ============================================
+    ERROR CONTAINER - DESKTOP STYLES
+    ============================================
+*/
+
+/* Main Container */
 .errorContainer {
 	position: absolute;
 	top: 50%;
@@ -15,6 +22,7 @@
 	color: #000;
 }
 
+/* Top Section */
 .errorTop {
 	display: flex;
 	justify-content: space-between;
@@ -37,6 +45,7 @@
 	background-color: red;
 }
 
+/* Content Section */
 .errorContent {
 	display: flex;
 	gap: 10px;
@@ -46,6 +55,7 @@
 	background-color: #fff;
 }
 
+/* Bottom Section */
 .errorBottom {
 	display: flex;
 	justify-content: flex-end;
@@ -55,4 +65,77 @@
 	padding-right: 30px;
 	padding-left: 30px;
 	border: 2px solid #207ec8;
+}
+
+/*
+    ============================================
+    ERROR CONTAINER - MOBILE STYLES
+    ============================================
+*/
+
+@media (max-width: 880px) {
+	/* Main Container */
+	.errorContainer {
+		width: 90vw;
+		max-width: 25rem;
+		padding: 8px;
+	}
+
+	.errorContainer p {
+		font-size: 0.9rem;
+	}
+
+	/* Top Section */
+	.errorTop {
+		margin-bottom: 8px;
+	}
+
+	.errorTop div:first-child {
+		gap: 3px;
+		font-size: 0.9rem;
+	}
+
+	.errorTop div:nth-child(2) {
+		padding: 2px 6px;
+	}
+
+	/* Content Section */
+	.errorContent {
+		gap: 8px;
+		padding: 8px;
+		font-size: 0.85rem;
+	}
+
+	/* Bottom Section */
+	.errorBottom button {
+		padding-right: 20px;
+		padding-left: 20px;
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Main Container */
+	.errorContainer {
+		width: 95vw;
+		padding: 6px;
+	}
+
+	.errorContainer p {
+		font-size: 0.85rem;
+	}
+
+	/* Content Section */
+	.errorContent {
+		flex-direction: column;
+		gap: 6px;
+		padding: 6px;
+		font-size: 0.8rem;
+	}
+
+	/* Bottom Section */
+	.errorBottom button {
+		width: 100%;
+		padding: 8px;
+	}
 }

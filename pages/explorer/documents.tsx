@@ -30,11 +30,7 @@ function Documents() {
 				/>
 			</Head>
 			<div style={{ height: '100%' }}>
-				<FileExplorer
-					folder="Documents"
-					topNav={true}
-					icon="documents"
-				/>
+				<FileExplorer folder="Documents" topNav={true} icon="documents" />
 				<Icons />
 			</div>
 		</>

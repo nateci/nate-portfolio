@@ -1,3 +1,10 @@
+/*
+    ============================================
+    TASKBAR - DESKTOP STYLES
+    ============================================
+*/
+
+/* Main Container */
 .container {
 	position: absolute;
 	z-index: 998;
@@ -11,11 +18,13 @@
 	background-image: url('/images/darknoice.png');
 }
 
+/* Icon Container */
 .iconContainer {
 	display: flex;
 	gap: 3px;
 }
 
+/* Icons & Interactive Elements */
 .icon,
 .dateIcons,
 .language,
@@ -28,29 +37,6 @@
 	border-radius: 5px;
 	cursor: pointer;
 	transition: background-color 0.15s ease-in-out;
-}
-
-.dateIcons {
-	flex-direction: column;
-	align-items: flex-end;
-	font-size: 0.65rem;
-}
-
-.microphone {
-	color: #99ebff;
-	font-size: 1rem;
-}
-
-.dateIcons p {
-	font-weight: 600;
-	font-size: 0.7rem;
-}
-
-.language p {
-	padding-right: 3px;
-	padding-left: 3px;
-	font-weight: 400;
-	font-size: 0.6em;
 }
 
 .icon:not(:active) span {
@@ -68,6 +54,33 @@
 	transform: scale(0.8);
 }
 
+/* Date Icons */
+.dateIcons {
+	flex-direction: column;
+	align-items: flex-end;
+	font-size: 0.65rem;
+}
+
+.dateIcons p {
+	font-weight: 600;
+	font-size: 0.7rem;
+}
+
+/* Language */
+.language p {
+	padding-right: 3px;
+	padding-left: 3px;
+	font-weight: 400;
+	font-size: 0.6em;
+}
+
+/* Microphone */
+.microphone {
+	color: #99ebff;
+	font-size: 1rem;
+}
+
+/* Toolbar Container */
 .toolbarContainer {
 	position: absolute;
 	right: 0;
@@ -77,4 +90,57 @@
 	margin-right: 8px;
 	color: #f9f9f9;
 	font-size: 1.2rem;
+}
+
+/*
+    ============================================
+    TASKBAR - MOBILE STYLES
+    ============================================
+*/
+
+@media (max-width: 880px) {
+	/* Main Container */
+	.container {
+		position: relative;
+		height: 55px;
+		padding: 0 5px;
+	}
+
+	/* Icon Container */
+	.iconContainer {
+		gap: 2px;
+	}
+
+	/* Icons & Interactive Elements */
+	.icon,
+	.language,
+	.microphone {
+		padding: 6px;
+		font-size: 0.9rem;
+	}
+
+	/* Date Icons */
+	.dateIcons {
+		padding: 4px 6px;
+		font-size: 0.55rem;
+	}
+
+	/* Toolbar Container */
+	.toolbarContainer {
+		position: relative;
+		gap: 2px;
+		height: auto;
+		margin-right: 0;
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	/* Icons & Interactive Elements */
+	.icon,
+	.language,
+	.microphone {
+		padding: 4px;
+		font-size: 0.85rem;
+	}
 }
