@@ -1,5 +1,5 @@
 // Auto-generated file index
-// Last generated: 2025-11-15T22:13:54.015Z
+// Last generated: 2025-11-23T19:37:36.214Z
 // Run 'npm run generate-index' to regenerate
 
 import type { FileItem, AllFolders } from '../components/utils/types/fileList';

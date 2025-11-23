@@ -2,6 +2,17 @@
 
 Windows 11 inspired personal portfolio website built using Next.js & deployed on Vercel
 
+## Deployments
+
+### Production
+Live at [natecirino.com](https://natecirino.com) - Deployed on Vercel.
+
+### Kubernetes Demo
+This project includes a complete Kubernetes deployment setup demonstrating containerization and orchestration skills:
+- **Dockerfile**: Multi-stage build optimized for production
+- **K8s Manifests**: Deployment, Service, Ingress, ConfigMap, and Namespace configurations
+- **CI/CD Ready**: Jenkins pipeline included for automated builds and deployments
+
 ## Getting Started
 
 run the development server:

@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nate-portfolio
+  namespace: portfolio
+  labels:
+    app: nate-portfolio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nate-portfolio
+  template:
+    metadata:
+      labels:
+        app: nate-portfolio
+    spec:
+      containers:
+      - name: portfolio
+        image: nateci/nate-portfolio:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5

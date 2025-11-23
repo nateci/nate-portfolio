@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-config
+  namespace: portfolio
+data:
+  # Add any environment variables here
+  API_URL: "https://api.natecirino.com"
+  ENVIRONMENT: "production"
