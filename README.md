@@ -11,7 +11,7 @@ Live at [natecirino.com](https://natecirino.com) - Deployed on Vercel.
 This project includes a complete Kubernetes deployment setup demonstrating containerization and orchestration skills:
 - **Dockerfile**: Multi-stage build optimized for production
 - **K8s Manifests**: Deployment, Service, Ingress, ConfigMap, and Namespace configurations
-- **CI/CD Ready**: Jenkins pipeline included for automated builds and deployments
+- **TODO**: Jenkins pipeline
 
 ## Getting Started
 
