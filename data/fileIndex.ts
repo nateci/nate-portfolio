@@ -1,5 +1,5 @@
 // Auto-generated file index
-// Last generated: 2025-11-23T19:37:36.214Z
+// Last generated: 2026-01-21T02:41:29.185Z
 // Run 'npm run generate-index' to regenerate
 
 import type { FileItem, AllFolders } from '../components/utils/types/fileList';
@@ -57,15 +57,6 @@ export const desktopFiles: FileItem[] = [
     "icon": "/icons/notes/notes.png",
     "path": "/notepad/about",
     "dateModified": "04/14/2025 04:02",
-    "size": "2kt"
-  },
-  {
-    "name": "Resume.pdf",
-    "type": "pdf",
-    "fileType": "PDF",
-    "icon": "/icons/pdf/pdf.png",
-    "path": "/resume/resume",
-    "dateModified": "11/11/2025 04:02",
     "size": "2kt"
   }
 ];

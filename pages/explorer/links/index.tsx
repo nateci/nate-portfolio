@@ -100,24 +100,6 @@ function Links() {
 							</div>
 						</a>
 					</Link>
-					<Link href={'https://plum-julienne-9.tiiny.site'} passHref>
-						<a target="_blank">
-							<div className={styles.listItem}>
-								<div className={styles.listItemName}>
-									<Image
-										src="/svg/resume.svg"
-										alt="icon"
-										width={18}
-										height={18}
-									></Image>
-									<p>Resume</p>
-								</div>
-								<p className={styles.listItemDateModified}>10/04/2025 04:20</p>
-								<p className={styles.listItemType}>Shortcut</p>
-								<p className={styles.listItemSize}>2kt</p>
-							</div>
-						</a>
-					</Link>
 					<Link href={'https://nateci.github.io/caloriecounter/'} passHref>
 						<a target="_blank">
 							<div className={styles.listItem}>

@@ -71,24 +71,6 @@ const customFileMap: Record<string, CustomFileConfig> = {
     dateModified: '04/14/2025 04:02',
     size: '2kt',
   },
-  'resume.tsx': {
-    name: 'Resume.pdf',
-    type: 'pdf',
-    fileType: 'PDF',
-    icon: '/icons/pdf/pdf.png',
-    path: '/resume/resume',
-    dateModified: '11/11/2025 04:02',
-    size: '2kt',
-  },
-  'resume.js': {
-    name: 'Resume.pdf',
-    type: 'pdf',
-    fileType: 'PDF',
-    icon: '/icons/pdf/pdf.png',
-    path: '/resume/resume',
-    dateModified: '11/11/2025 04:02',
-    size: '2kt',
-  },
 };
 
 // Map extensions to file types
@@ -282,8 +264,8 @@ function scanFolder(folderKey: string): FileItem[] {
       }
     }
 
-    // Add custom files (About me.txt and Resume.pdf)
-    const customFiles = ['about.tsx', 'resume.tsx'];
+    // Add custom files (About me.txt)
+    const customFiles = ['about.tsx'];
     for (const fileName of customFiles) {
       if (customFileMap[fileName]) {
         items.push(customFileMap[fileName]);

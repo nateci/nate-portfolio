@@ -232,22 +232,3 @@
 		display: none; /* Hide extra info on very small screens */
 	}
 }
-
-/*
-    ============================================
-    RESUME - DESKTOP & MOBILE (NO BREAKPOINTS)
-    ============================================
-*/
-
-.pdfContainer {
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-	background: #525252;
-}
-
-.pdfFrame {
-	width: 100%;
-	height: 100%;
-	border: none;
-}
