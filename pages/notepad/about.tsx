@@ -14,7 +14,7 @@ function About() {
 		return age;
 	};
 	const textContent = () => {
-		return `Hello, my name is Nate! 👋\n\nI am a ${getAge()}-year-old Computer Science student from Houston, TX. I am interested in all kinds of tech related topics!  Open the Links folder to view some sites i've worked on, my social media, and my resume! 🤠\n\nAlso this website is built with Next.js and React and is an attempt at recreating my windows desktop :)\n
+		return `Hello, my name is Nate! 👋\n\nI am a ${getAge()}-year-old Computer Science student from Houston, TX. I am interested in all kinds of tech related topics!  Open the Links folder to view some sites i've worked on and my social media! 🤠\n\nAlso this website is built with Next.js and React and is an attempt at recreating my windows desktop :)\n
 		`;
 	};
 

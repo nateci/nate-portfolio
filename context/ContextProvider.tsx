@@ -44,7 +44,6 @@ const initialMaximized = {
 	mediaPlayer: null,
 	notepad: null,
 	terminal: null,
-	resume: null,
 };
 
 const initialPosition = {
@@ -67,12 +66,6 @@ const initialPosition = {
 		height: 550,
 	},
 	terminal: {
-		x: 0,
-		y: 0,
-		width: 880,
-		height: 550,
-	},
-	resume: {
 		x: 0,
 		y: 0,
 		width: 880,
